@@ -36,44 +36,48 @@ const App = () => {
 
   return (
     <div className="App">
-      <h1>PokeDex</h1>
-      <form onSubmit={handleSubmit}>
-        <label>
-          <input 
-          type="text" 
-          onChange={handleChange} 
-          placeholder="Enter Pokemon Name"
-          />
-        </label>
-      </form>
-      {pokemonData.map((data) => {
-        return (
-          <div className='container'>
-            <h4>{capitalizeFirstLetter(data.name)}</h4>
-            <img src={data.sprites["front_default"]}/>
-            <div className='divTable'>
-              <div classeName='divTableBody'>
-                <div classeName='divTableRow'>
-                  <div classeName='divTableCell'>Type</div>
-                  <div classeName='divTableCell'>{pokemonType}</div>
-                </div> 
-                <div classeName='divTableRow'>
-                  <div classeName='divTableCell'>Height</div>
-                  <div classeName='divTableCell'>{data.height}</div>
-                </div>
-                <div classeName='divTableRow'>
-                  <div classeName='divTableCell'>Weight</div>
-                  <div classeName='divTableCell'>{data.weight}</div>
-                </div>
-                <div classeName='divTableRow'>
-                  <div classeName='divTableCell'>Number of Appearances</div>
-                  <div classeName='divTableCell'>{data.game_indices.length}</div>
+      <div className='header-section'>
+        <p id="poke-title">PokeDex</p>
+        <form onSubmit={handleSubmit}>
+          <label>
+            <input 
+            type="text" 
+            onChange={handleChange} 
+            placeholder="Enter Pokemon Name"
+            />
+          </label>
+        </form>
+      </div>
+      <div className='body-section'>
+        {pokemonData.map((data) => {
+          return (
+            <div className='poke-card'>
+              <h4>{capitalizeFirstLetter(data.name)}</h4>
+              <img src={data.sprites["front_default"]}/>
+              <div className='divTable'>
+                <div classeName='divTableBody'>
+                  <div classeName='divTableRow'>
+                    <div classeName='divTableCell'>Type</div>
+                    <div classeName='divTableCell'>{pokemonType}</div>
+                  </div> 
+                  <div classeName='divTableRow'>
+                    <div classeName='divTableCell'>Height</div>
+                    <div classeName='divTableCell'>{data.height}</div>
+                  </div>
+                  <div classeName='divTableRow'>
+                    <div classeName='divTableCell'>Weight</div>
+                    <div classeName='divTableCell'>{data.weight}</div>
+                  </div>
+                  <div classeName='divTableRow'>
+                    <div classeName='divTableCell'>Number of Appearances</div>
+                    <div classeName='divTableCell'>{data.game_indices.length}</div>
+                  </div>
                 </div>
               </div>
             </div>
-          </div>
-        )
-      })}
+          )
+        })}
+      </div>
     </div>
   );
 }
