@@ -14,15 +14,16 @@ body {
   background-repeat: no-repeat;
 }
 
+#poke-title {
+  font-family: 'Luckiest Guy', cursive;
+  color: #fccf00;
+  -webkit-text-stroke: 3.5px #2468b1;
+  font-size: 3em;
+}
+
 .poke-card {
   border: solid black 1px;
   width: 25%;
   margin: 0 auto;
 }
 
-#poke-title {
-  font-family: 'Luckiest Guy', cursive;
-  color: #fccf00;
-  -webkit-text-stroke: 3px #2468b1;
-  font-size: 3em;
-}
