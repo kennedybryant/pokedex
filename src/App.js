@@ -52,7 +52,10 @@ const App = () => {
         {pokemonData.map((data) => {
           return (
             <div className='poke-card'>
-              <h4>{capitalizeFirstLetter(data.name)}</h4>
+              <div className='card-header'>
+                <h4>{capitalizeFirstLetter(data.name)}</h4>
+                <h4>#{data.id}</h4>
+              </div>
               <img src={data.sprites["front_default"]}/>
               <div className='divTable'>
                 <div classeName='divTableBody'>

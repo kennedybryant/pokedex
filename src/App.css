@@ -22,8 +22,31 @@ body {
 }
 
 .poke-card {
-  border: solid black 1px;
+  border: solid #fccf00 10px;
+  border-radius: 10px;
+  background-color: #FFE672;
   width: 25%;
   margin: 0 auto;
+  padding-top: 1em;
+  padding-bottom: 1em;
 }
 
+.card-header {
+  width: 80%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-around;
+  border: 4px #7b7b7b solid;
+  border-radius: 10px;
+  background-color: #c0c0c0;
+  padding-top: 2px;
+  padding-bottom: 2px;
+}
+
+h4 {
+  margin: 0;
+}
+
+img {
+  height: 10em;
+}
