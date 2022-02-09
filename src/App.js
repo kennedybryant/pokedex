@@ -57,26 +57,30 @@ const App = () => {
                 <h4>#{data.id}</h4>
               </div>
               <img src={data.sprites["front_default"]}/>
-              <div className='divTable'>
+              <table className='divTable'>
                 <div classeName='divTableBody'>
-                  <div classeName='divTableRow'>
-                    <div classeName='divTableCell'>Type</div>
-                    <div classeName='divTableCell'>{pokemonType}</div>
-                  </div> 
-                  <div classeName='divTableRow'>
-                    <div classeName='divTableCell'>Height</div>
-                    <div classeName='divTableCell'>{data.height}</div>
-                  </div>
-                  <div classeName='divTableRow'>
-                    <div classeName='divTableCell'>Weight</div>
-                    <div classeName='divTableCell'>{data.weight}</div>
-                  </div>
-                  <div classeName='divTableRow'>
-                    <div classeName='divTableCell'>Number of Appearances</div>
-                    <div classeName='divTableCell'>{data.game_indices.length}</div>
-                  </div>
+                  <tr classeName='divTableRow'>
+                    <th classeName='table-category'>Type</th>
+                    <td classeName='divTableCell'>{capitalizeFirstLetter(pokemonType)}</td>
+                  </tr> 
+                  <tr classeName='divTableRow'>
+                    <th classeName='table-category'>Height</th>
+                    <td classeName='divTableCell'>{data.height}</td>
+                  </tr>
+                  <tr classeName='divTableRow'>
+                    <th classeName='table-category'>Weight</th>
+                    <td classeName='divTableCell'>{data.weight}</td>
+                  </tr>
+                  <tr classeName='divTableRow'>
+                    <th classeName='table-category'>Abilities</th>
+                    <td classeName='divTableCell'>{data.abilities.length}</td>
+                  </tr>
+                  <tr classeName='divTableRow'>
+                    <th classeName='table-category'>Moves</th>
+                    <td classeName='divTableCell'>{data.moves.length}</td>
+                  </tr>
                 </div>
-              </div>
+              </table>
             </div>
           )
         })}

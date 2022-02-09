@@ -50,3 +50,11 @@ h4 {
 img {
   height: 10em;
 }
+
+table {
+  display: table;
+  max-width: 20em;
+  display: flex;
+  margin: 0 auto;
+  justify-content: center;
+}
