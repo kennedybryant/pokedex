@@ -64,11 +64,11 @@ const App = () => {
                 </div>
                 <div className='row'>
                   <div className='header-cell cell'>HEIGHT</div>
-                  <div className='cell'>{data.height}</div>
+                  <div className='cell'>{Math.round(data.height * 3.9)}"</div>
                 </div>
                 <div className='row'>
                   <div className='header-cell cell'>WEIGHT</div>
-                  <div className='cell'>{data.weight}</div>
+                  <div className='cell'>{Math.round(data.weight / 4.3)} lbs</div>
                 </div>
                 <div className='row'>
                   <div className='header-cell cell'>ABILITIES</div>
