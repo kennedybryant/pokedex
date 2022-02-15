@@ -51,10 +51,25 @@ img {
   height: 10em;
 }
 
-table {
-  display: table;
-  max-width: 20em;
-  display: flex;
+.table {
+  border: black solid 2px;
+  width: 80%;
   margin: 0 auto;
-  justify-content: center;
+}
+
+.row {
+  display: flex;
+}
+
+.cell {
+  border: black solid 1px;
+  width: 50%;
+  background-color: #85bfff;
+}
+
+.header-cell {
+  background-color: #2468b1;
+  text-align: left;
+  font-weight: bold;
+  padding-left: 1px;
 }

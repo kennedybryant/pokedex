@@ -57,30 +57,28 @@ const App = () => {
                 <h4>#{data.id}</h4>
               </div>
               <img src={data.sprites["front_default"]}/>
-              <table className='divTable'>
-                <div classeName='divTableBody'>
-                  <tr classeName='divTableRow'>
-                    <th classeName='table-category'>Type</th>
-                    <td classeName='divTableCell'>{capitalizeFirstLetter(pokemonType)}</td>
-                  </tr> 
-                  <tr classeName='divTableRow'>
-                    <th classeName='table-category'>Height</th>
-                    <td classeName='divTableCell'>{data.height}</td>
-                  </tr>
-                  <tr classeName='divTableRow'>
-                    <th classeName='table-category'>Weight</th>
-                    <td classeName='divTableCell'>{data.weight}</td>
-                  </tr>
-                  <tr classeName='divTableRow'>
-                    <th classeName='table-category'>Abilities</th>
-                    <td classeName='divTableCell'>{data.abilities.length}</td>
-                  </tr>
-                  <tr classeName='divTableRow'>
-                    <th classeName='table-category'>Moves</th>
-                    <td classeName='divTableCell'>{data.moves.length}</td>
-                  </tr>
+              <div className='table'>
+                <div className='row'>
+                  <div className='header-cell cell'>TYPE</div>
+                  <div className='cell'>{capitalizeFirstLetter(pokemonType)}</div>
                 </div>
-              </table>
+                <div className='row'>
+                  <div className='header-cell cell'>HEIGHT</div>
+                  <div className='cell'>{data.height}</div>
+                </div>
+                <div className='row'>
+                  <div className='header-cell cell'>WEIGHT</div>
+                  <div className='cell'>{data.weight}</div>
+                </div>
+                <div className='row'>
+                  <div className='header-cell cell'>ABILITIES</div>
+                  <div className='cell'>{data.abilities.length}</div>
+                </div>
+                <div className='row'>
+                  <div className='header-cell cell'>MOVES</div>
+                  <div className='cell'>{data.moves.length}</div>
+                </div>
+              </div>
             </div>
           )
         })}
