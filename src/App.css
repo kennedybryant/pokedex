@@ -73,3 +73,13 @@ img {
   font-weight: bold;
   padding-left: 1px;
 }
+
+.abilities-div {
+  border: solid black 1px;
+  background-color: white;
+}
+
+#abilities-list {
+  list-style: none;
+  border: blue solid 1px;
+}

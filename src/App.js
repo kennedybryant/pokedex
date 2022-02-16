@@ -1,8 +1,9 @@
-import React, {useState, useEffect} from 'react';
+import React, {useState} from 'react';
 import axios from 'axios';
+import Abilities from './components/abilities';
 import './App.css';
 
-function capitalizeFirstLetter(string) {
+export function capitalizeFirstLetter(string) {
   return string.charAt(0).toUpperCase() + string.slice(1);
 }
 
@@ -10,6 +11,7 @@ const App = () => {
   const [pokemon, setPokemon] = useState("pikachu");
   const [pokemonData, setPokemonData] = useState([]);
   const [pokemonType, setPokemonType] = useState("");
+  const [isToggled, setIsToggled] = useState(false);
 
   const getPokemon = async () => {
     const toArray = [];
@@ -19,7 +21,6 @@ const App = () => {
       toArray.push(res.data);
       setPokemonType(res.data.types[0].type.name);
       setPokemonData(toArray)
-      console.log(res);
     } catch (error) {
       console.log(error);
     }
@@ -49,6 +50,7 @@ const App = () => {
         </form>
       </div>
       <div className='body-section'>
+      {isToggled && <Abilities pokemon={pokemon} pokemonData={pokemonData} isToggled={isToggled}/>}
         {pokemonData.map((data) => {
           return (
             <div className='poke-card'>
@@ -56,7 +58,7 @@ const App = () => {
                 <h4>{capitalizeFirstLetter(data.name)}</h4>
                 <h4>#{data.id}</h4>
               </div>
-              <img src={data.sprites["front_default"]}/>
+              <img src={data.sprites["front_default"]} alt={pokemon}/>
               <div className='table'>
                 <div className='row'>
                   <div className='header-cell cell'>TYPE</div>
@@ -72,7 +74,7 @@ const App = () => {
                 </div>
                 <div className='row'>
                   <div className='header-cell cell'>ABILITIES</div>
-                  <div className='cell'>{data.abilities.length}</div>
+                  <div className='cell'>{data.abilities.length}<button id="abilities-btn" onClick={() => setIsToggled(!isToggled)}>X</button></div>
                 </div>
                 <div className='row'>
                   <div className='header-cell cell'>MOVES</div>
