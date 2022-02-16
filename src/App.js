@@ -13,6 +13,8 @@ const App = () => {
   const [pokemonType, setPokemonType] = useState("");
   const [isToggled, setIsToggled] = useState(false);
 
+ 
+
   const getPokemon = async () => {
     const toArray = [];
     try {
@@ -35,6 +37,10 @@ const App = () => {
     getPokemon();
   }
 
+  const togglePopup = () => {
+    setIsToggled(!isToggled);
+  }
+
   return (
     <div className="App">
       <div className='header-section'>
@@ -50,7 +56,6 @@ const App = () => {
         </form>
       </div>
       <div className='body-section'>
-      {isToggled && <Abilities pokemon={pokemon} pokemonData={pokemonData} isToggled={isToggled}/>}
         {pokemonData.map((data) => {
           return (
             <div className='poke-card'>
@@ -74,7 +79,13 @@ const App = () => {
                 </div>
                 <div className='row'>
                   <div className='header-cell cell'>ABILITIES</div>
-                  <div className='cell'>{data.abilities.length}<button id="abilities-btn" onClick={() => setIsToggled(!isToggled)}>X</button></div>
+                  <div className='cell'>{data.abilities.length}
+                  <input 
+                    id="abilities-btn" 
+                    type="button"
+                    value="^"
+                    onClick={togglePopup}/>
+                  </div>
                 </div>
                 <div className='row'>
                   <div className='header-cell cell'>MOVES</div>
@@ -85,6 +96,19 @@ const App = () => {
           )
         })}
       </div>
+      {isToggled && <Abilities 
+        content={<>
+          <b>Abilities</b>
+          <div id="abilities-list">
+                {
+                    pokemonData[0].abilities.map(ability => 
+                        <div className="ability-item" id={ability.ability.name}>{capitalizeFirstLetter(ability.ability.name)}</div>
+                        )
+                }
+            </div>
+        </>}
+        handleClose={togglePopup}
+      />}
     </div>
   );
 }
