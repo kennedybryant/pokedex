@@ -74,15 +74,24 @@ img {
   padding-left: 1px;
 }
 
-/* .abilities-div {
-  border: solid black 1px;
-  background-color: white;
+.list-cell {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-#abilities-list {
-  list-style: none;
-  border: blue solid 1px;
-} */
+/* List Buttons */
+.list-btn {
+  margin-left: 3px;
+  height: 80%;
+  font-size: .5em;
+  background-color: #c0c0c0;
+  border-radius: 20%;
+}
+
+.list-btn:hover {
+  cursor: pointer;
+}
 
 /* Popup style */
 .popup-box {

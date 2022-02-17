@@ -85,21 +85,23 @@ const App = () => {
                 </div>
                 <div className='row'>
                   <div className='header-cell cell'>ABILITIES</div>
-                  <div className='cell'>{data.abilities.length}
+                  <div className='cell list-cell'>{data.abilities.length}
                     <input 
                       id="abilities-btn" 
+                      className="list-btn"
                       type="button"
-                      value="^"
+                      value="List"
                       onClick={togglePopup}/>
                   </div>
                 </div>
                 <div className='row'>
                   <div className='header-cell cell'>MOVES</div>
-                  <div className='cell'>{data.moves.length}
+                  <div className='cell list-cell'>{data.moves.length}
                   <input 
                       id="moves-btn" 
+                      className="list-btn"
                       type="button"
-                      value="^"
+                      value="List"
                       onClick={openPopup}/>
                   </div>
                 </div>
